@@ -41,20 +41,6 @@ class AuthController extends Controller
         $accessToken = auth()->user()->createToken('authToken')->accessToken;
 
             return response(['user'=>auth()->user(), 'accessToken'=>$accessToken]);
-    }
-
-    public function update(Request $request)
-    {
-
-        $user = User::find(3);
-
-        $user->posts()->whereId(1)->update(['title'=>"updated title",'description'=>'Coding is good']);
-
-    foreach ($user->posts as $post){
-        
-        echo $post->title.': '.$post->description;
-    }
-}
-
+    }  
 
 }
